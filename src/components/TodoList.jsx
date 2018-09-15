@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 
-const TodoList = () => {
+const TodoList = ({ todoItems }) => {
 	return (
 		<Fragment>
 			<ul>
-				<li>First item</li>
+				{ todoItems.map(item => <li key={item.id}>{ item.text }</li>) }
 			</ul>
 		</Fragment>
 	);
