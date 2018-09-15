@@ -4,8 +4,13 @@ class App extends Component {
 	render() {
 		return (
 			<Fragment>
-				<h1 align="center">todo-app</h1>
-				<p align="center">It works!</p>
+				<div align='center'>
+					<h1>Todo App</h1>
+					<form>
+						<input type='text' />
+						<button>Add</button>
+					</form>
+				</div>
 			</Fragment>
 		);
 	}
