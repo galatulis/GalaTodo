@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import TodoList from './components/TodoList';
+import TodoInput from './containers/TodoInput';
 
 class App extends Component {
 	render() {
@@ -6,10 +8,8 @@ class App extends Component {
 			<Fragment>
 				<div align='center'>
 					<h1>Todo App</h1>
-					<form>
-						<input type='text' />
-						<button>Add</button>
-					</form>
+					<TodoList />
+					<TodoInput />
 				</div>
 			</Fragment>
 		);
