@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
 
 const styles = {
@@ -22,6 +23,11 @@ const TodoList = ({ classes, todoItems }) => {
 			</ul>
 		</Fragment>
 	);
+};
+
+TodoList.propTypes = {
+	classes: PropTypes.object.isRequired,
+	todoItems: PropTypes.array.isRequired
 };
 
 export default injectSheet(styles)(TodoList);

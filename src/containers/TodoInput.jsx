@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
 
 const styles = {
@@ -52,5 +53,10 @@ class TodoInput extends Component {
 		);
 	}
 }
+
+TodoInput.propTypes = {
+	classes: PropTypes.object.isRequired,
+	addNewItem: PropTypes.func.isRequired
+};
 
 export default injectSheet(styles)(TodoInput);

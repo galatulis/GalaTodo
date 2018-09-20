@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
 import TodoList from './components/TodoList';
 import TodoInput from './containers/TodoInput';
@@ -65,5 +66,9 @@ class App extends Component {
 		);
 	}
 }
+
+App.propTypes = {
+	classes: PropTypes.object.isRequired
+};
 
 export default injectSheet(styles)(App);
