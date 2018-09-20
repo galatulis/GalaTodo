@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
+import injectSheet from 'react-jss';
 
-const style = {
+const styles = {
 	form: {
 		width: '90%'
 	},
@@ -30,7 +31,7 @@ class TodoInput extends Component {
 		newItem: ''
 	}
 	handleChange = (event) => {
-		this.setState({ newItem: event.target.value })
+		this.setState({ newItem: event.target.value });
 	}
 	handleSubmit = (event) => {
 		event.preventDefault();
@@ -40,15 +41,16 @@ class TodoInput extends Component {
 		this.setState({ newItem: '' });
 	}
 	render() {
+		const { classes } = this.props;
 		return (
 			<Fragment>
-				<form onSubmit={this.handleSubmit} style={style.form}>
-					<input onChange={this.handleChange} value={this.state.newItem} type='text' style={style.input} />
-					<button style={style.button}>Add</button>
+				<form onSubmit={this.handleSubmit} className={classes.form}>
+					<input onChange={this.handleChange} value={this.state.newItem} type='text' className={classes.input} />
+					<button className={classes.button}>Add</button>
 				</form>
 			</Fragment>
 		);
 	}
 }
 
-export default TodoInput;
+export default injectSheet(styles)(TodoInput);

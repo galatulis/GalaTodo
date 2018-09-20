@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
+import injectSheet from 'react-jss';
 import TodoList from './components/TodoList';
 import TodoInput from './containers/TodoInput';
 
-const style = {
+const styles = {
 	content: {
 		alignItems: 'center',
 		display: 'flex',
@@ -49,13 +50,14 @@ class App extends Component {
 		this.setState({ todoItems: newItem });
 	}
 	componentDidMount() {
-		document.title = "Todo App"
+		document.title = 'Todo App';
 	}
 	render() {
+		const { classes } = this.props;
 		return (
 			<Fragment>
-				<div style={style.content}>
-					<h1 style={style.title}>Todo App</h1>
+				<div className={classes.content}>
+					<h1 className={classes.title}>Todo App</h1>
 					<TodoList todoItems={this.state.todoItems} />
 					<TodoInput addNewItem={this.addNewItem} />
 				</div>
@@ -64,4 +66,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default injectSheet(styles)(App);

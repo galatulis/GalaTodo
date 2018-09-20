@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
+import injectSheet from 'react-jss';
 
-const style = {
+const styles = {
 	item: {
 		color: '#61dafb',
 		fontSize: '1.5em',
@@ -13,14 +14,14 @@ const style = {
 	}
 };
 
-const TodoList = ({ todoItems }) => {
+const TodoList = ({ classes, todoItems }) => {
 	return (
 		<Fragment>
-			<ul style={style.list}>
-				{ todoItems.map(item => <li key={item.id} style={style.item}>{ item.text }</li>) }
+			<ul className={classes.list}>
+				{ todoItems.map(item => <li key={item.id} className={classes.item}>{ item.text }</li>) }
 			</ul>
 		</Fragment>
 	);
-}
+};
 
-export default TodoList;
+export default injectSheet(styles)(TodoList);
