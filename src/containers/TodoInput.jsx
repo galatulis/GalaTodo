@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
+import { connect } from 'react-redux';
+import { actions } from '../store';
 
 const styles = {
 	form: {
@@ -28,25 +30,35 @@ const styles = {
 };
 
 class TodoInput extends Component {
-	state = {
-		newItem: ''
-	}
 	handleChange = (event) => {
-		this.setState({ newItem: event.target.value });
+		this.props.dispatch(actions.inputNewItem(event.target.value));
 	}
 	handleSubmit = (event) => {
 		event.preventDefault();
-		const { newItem } = this.state;
+		const { newItem, dispatch } = this.props;
 		if (!newItem.length) return;
-		this.props.addNewItem(newItem);
-		this.setState({ newItem: '' });
+		this.addNewItem(newItem);
+		dispatch(actions.inputNewItem(''));
+	}
+	addNewItem = (item) => {
+		const { todoItems, dispatch } = this.props;
+		let lastId = todoItems.length;
+		if (lastId) {
+			const lastIndex = todoItems.length - 1;
+			lastId = todoItems[lastIndex].id + 1;
+		}
+		const newItem = {
+			id: lastId,
+			text: item,
+		};
+		dispatch(actions.addItem(newItem));
 	}
 	render() {
-		const { classes } = this.props;
+		const { classes, newItem } = this.props;
 		return (
 			<Fragment>
 				<form onSubmit={this.handleSubmit} className={classes.form}>
-					<input onChange={this.handleChange} value={this.state.newItem} type='text' className={classes.input} />
+					<input onChange={this.handleChange} value={newItem} type='text' className={classes.input} />
 					<button className={classes.button}>Add</button>
 				</form>
 			</Fragment>
@@ -54,9 +66,16 @@ class TodoInput extends Component {
 	}
 }
 
+const mapStateToProps = (state) => ({
+	newItem: state.newItem,
+	todoItems: state.todoItems
+});
+
 TodoInput.propTypes = {
 	classes: PropTypes.object.isRequired,
-	addNewItem: PropTypes.func.isRequired
+	dispatch: PropTypes.func.isRequired,
+	newItem: PropTypes.string.isRequired,
+	todoItems: PropTypes.array.isRequired
 };
 
-export default injectSheet(styles)(TodoInput);
+export default connect(mapStateToProps)(injectSheet(styles)(TodoInput));

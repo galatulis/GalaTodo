@@ -34,22 +34,6 @@ const styles = {
 };
 
 class App extends Component {
-	state = {
-		todoItems: []
-	}
-	addNewItem = (item) => {
-		const { todoItems } = this.state;
-		let lastId = todoItems.length;
-		if (lastId) {
-			const lastIndex = todoItems.length - 1;
-			lastId = todoItems[lastIndex].id + 1;
-		}
-		const newItem = [...todoItems, {
-			id: lastId,
-			text: item,
-		}];
-		this.setState({ todoItems: newItem });
-	}
 	componentDidMount() {
 		document.title = 'Todo App';
 	}
@@ -59,8 +43,8 @@ class App extends Component {
 			<Fragment>
 				<div className={classes.content}>
 					<h1 className={classes.title}>Todo App</h1>
-					<TodoList todoItems={this.state.todoItems} />
-					<TodoInput addNewItem={this.addNewItem} />
+					<TodoList />
+					<TodoInput />
 				</div>
 			</Fragment>
 		);

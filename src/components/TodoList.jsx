@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
+import { connect } from 'react-redux';
 
 const styles = {
 	item: {
@@ -25,9 +26,13 @@ const TodoList = ({ classes, todoItems }) => {
 	);
 };
 
+const mapStateToProps = (state) => ({
+	todoItems: state.todoItems
+});
+
 TodoList.propTypes = {
 	classes: PropTypes.object.isRequired,
 	todoItems: PropTypes.array.isRequired
 };
 
-export default injectSheet(styles)(TodoList);
+export default connect(mapStateToProps)(injectSheet(styles)(TodoList));
