@@ -3,9 +3,8 @@
 
 ## Built With
 
-* [React](https://reactjs.org/)
-* [Redux](https://redux.js.org/)
-* [JSS](https://cssinjs.org/)
+- [React](https://reactjs.org/)
+- [JSS](https://cssinjs.org/)
 
 ## License
 
