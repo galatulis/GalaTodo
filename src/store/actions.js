@@ -4,6 +4,6 @@ export const TYPES = {
 };
 
 export const actions = {
-	addItem: (payload) => ({ type: TYPES.ADD_ITEM, payload }),
-	inputNewItem: (payload) => ({ type: TYPES.INPUT_NEW_ITEM, payload })
+	addItem: payload => ({ type: TYPES.ADD_ITEM, payload }),
+	inputNewItem: payload => ({ type: TYPES.INPUT_NEW_ITEM, payload })
 };

@@ -20,13 +20,17 @@ const TodoList = ({ classes, todoItems }) => {
 	return (
 		<Fragment>
 			<ul className={classes.list}>
-				{ todoItems.map(item => <li key={item.id} className={classes.item}>{ item.text }</li>) }
+				{todoItems.map(item => (
+					<li key={item.id} className={classes.item}>
+						{item.text}
+					</li>
+				))}
 			</ul>
 		</Fragment>
 	);
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
 	todoItems: state.todoItems
 });
 

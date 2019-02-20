@@ -9,6 +9,8 @@ it('renders without crashing', () => {
 	ReactDOM.render(
 		<Provider store={store}>
 			<App />
-		</Provider>, div);
+		</Provider>,
+		div
+	);
 	ReactDOM.unmountComponentAtNode(div);
 });

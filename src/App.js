@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
+
 import TodoList from './components/TodoList';
 import TodoInput from './containers/TodoInput';
 
@@ -21,7 +22,7 @@ const styles = {
 		position: 'absolute',
 		right: '0',
 		textAlign: 'center',
-		top: '0',
+		top: '0'
 	},
 	title: {
 		color: '#61dafb',
@@ -30,15 +31,17 @@ const styles = {
 		marginRight: 'auto',
 		marginTop: '10%',
 		textAlign: 'center'
-	},
+	}
 };
 
 class App extends Component {
 	componentDidMount() {
 		document.title = 'Todo App';
 	}
+
 	render() {
 		const { classes } = this.props;
+
 		return (
 			<Fragment>
 				<div className={classes.content}>
