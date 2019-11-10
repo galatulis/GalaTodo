@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import injectSheet from 'react-jss';
+import { createUseStyles } from 'react-jss';
 
-function TodoInput({ classes, submitNewItem }) {
+function TodoInput({ submitNewItem }) {
+  const useStyles = createUseStyles(styles());
+  const classes = useStyles();
+
   const [newItem, setNewItem] = useState('');
 
   const handleChange = event => {
@@ -58,8 +61,7 @@ function styles() {
 }
 
 TodoInput.propTypes = {
-  classes: PropTypes.object.isRequired,
   submitNewItem: PropTypes.func.isRequired,
 };
 
-export default injectSheet(styles())(TodoInput);
+export default TodoInput;

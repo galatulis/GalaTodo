@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import injectSheet from 'react-jss';
+import { createUseStyles } from 'react-jss';
 
-function TodoList({ classes, todoItems, deleteItem }) {
+function TodoList({ todoItems, deleteItem }) {
+  const useStyles = createUseStyles(styles());
+  const classes = useStyles();
+
   const handleClick = id => () => {
     deleteItem(id);
   };
@@ -38,8 +41,8 @@ function styles() {
 }
 
 TodoList.propTypes = {
-  classes: PropTypes.object.isRequired,
+  deleteItem: PropTypes.func.isRequired,
   todoItems: PropTypes.array.isRequired,
 };
 
-export default injectSheet(styles())(TodoList);
+export default TodoList;

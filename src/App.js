@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import injectSheet from 'react-jss';
+import { createUseStyles } from 'react-jss';
 
 import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 
-function App({ classes }) {
+function App() {
+  const useStyles = createUseStyles(styles());
+  const classes = useStyles();
+
   const [todoItems, setTodoItems] = useState([]);
 
   useEffect(() => {
@@ -65,8 +67,4 @@ function styles() {
   };
 }
 
-App.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default injectSheet(styles())(App);
+export default App;
