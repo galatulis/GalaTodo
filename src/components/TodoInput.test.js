@@ -6,9 +6,9 @@ import TodoInput from './TodoInput';
 afterEach(cleanup);
 
 describe('TodoInput', () => {
-	it('renders without crashing', () => {
-		const submitNewItem = jest.fn();
+  it('renders without crashing', () => {
+    const submitNewItem = jest.fn();
 
-		render(<TodoInput submitNewItem={submitNewItem} />);
-	});
+    render(<TodoInput submitNewItem={submitNewItem} />);
+  });
 });
