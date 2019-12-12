@@ -1,11 +1,10 @@
-<h1 align="center">Todo App</h1>
-<p align="center">A simple todo app for learning.</p>
+# Gagas
 
-## Built With
-
-- [React](https://reactjs.org/)
-- [JSS](https://cssinjs.org/)
+A simple todo app for learning and fun.
 
 ## License
 
-This project is licensed under the CC0 License - see the [LICENSE](LICENSE) file for details
+This project is released under GNU General Public License.
+See [LICENSE](LICENSE) for details.
+
+&copy; 2018 &mdash; Ananda Umamil
