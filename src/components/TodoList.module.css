@@ -1,0 +1,11 @@
+.item {
+  color: #61dafb;
+  font-size: 1.5em;
+  margin-bottom: 20%;
+}
+
+.list {
+  list-style: none inside none;
+  padding: 0;
+  text-align: left;
+}

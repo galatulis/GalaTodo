@@ -1,25 +1,14 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true
-  },
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jest/recommended",
-    "prettier"
+    "react-app",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/react"
   ],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2015,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "jest", "react-hooks"],
-  "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
-  }
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.spec.js"],
+      "extends": ["plugin:jest/recommended", "plugin:jest/style"]
+    }
+  ]
 }

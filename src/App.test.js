@@ -1,12 +1,12 @@
-import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import React from "react";
+import { render } from "@testing-library/react";
 
-import App from './App';
+import App from "./App";
 
-afterEach(cleanup);
-
-describe('App', () => {
-  it('renders without crashing', () => {
-    render(<App />);
+describe("App", () => {
+  it("renders title text", () => {
+    const { getByText } = render(<App />);
+    const linkElement = getByText(/Todo App/);
+    expect(linkElement).toBeInTheDocument();
   });
 });
