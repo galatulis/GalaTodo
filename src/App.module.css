@@ -1,27 +1,72 @@
-.content {
-  align-items: center;
-  display: flex;
-  background-color: #20232a;
-  bottom: 0;
-  justify-content: top;
-  flex-direction: column;
-  font-family: "Ubuntu, Roboto, sans-serif";
-  left: 0;
-  margin: auto;
-  max-height: 100%;
-  max-width: 100%;
-  overflow: auto;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
+:root {
+  --snow-light: rgba(255, 255, 255, 0.85);
+  --cream-lighter: #faf6f6;
+  --cream-light: #f6ecec;
+  --cream-bold: #f6c9bb;
+  --green-lighter: #ade6b4;
+  --green-light: #73cd78;
+  --green-bold: #09583e;
+  --grey-light: rgba(0, 0, 0, 0.35);
+  --grey-bold: rgba(0, 0, 0, 0.25);
 }
 
-.title {
-  color: #61dafb;
-  font-size: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-  text-align: center;
+:global html,
+:global body {
+  height: 100%;
+}
+
+:global body {
+  background-color: var(--cream-light);
+  font-family: "Poppins", "Segoe UI", Roboto, Ubuntu, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+:global #root {
+  height: 100%;
+  padding: 1rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.inputItem {
+  background: var(--cream-lighter);
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  display: flex;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+.form {
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+.input {
+  background: transparent;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-size: 1.25rem;
+  outline: none;
+  width: 100%;
+}
+
+.input:focus {
+  background: var(--snow-light);
+  border-color: var(--green-light);
+  box-shadow: 0 0 2px 0 var(--green-bold);
+  cursor: auto;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  :global #root {
+    margin: 0 auto;
+    max-width: 768px;
+  }
 }
