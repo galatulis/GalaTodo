@@ -15,7 +15,6 @@
   cursor: pointer;
   flex: 1;
   font-size: 1.25rem;
-  outline: none;
   overflow: hidden;
   padding: 0.25rem;
   resize: none;
@@ -32,6 +31,7 @@
   border-color: var(--green-light);
   box-shadow: 0 0 2px 0 var(--green-bold);
   cursor: auto;
+  outline: 0;
   text-decoration: none;
 }
 
@@ -41,12 +41,13 @@
 }
 
 .checkboxLabel {
+  display: flex;
   cursor: pointer;
   margin-right: 0.5rem;
 }
 
 .svg {
-  stroke-width: 8;
+  stroke-width: 5;
   stroke: var(--green-bold);
   width: 2em;
 }

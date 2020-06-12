@@ -1,4 +1,5 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useMemo } from "react";
+import classNames from "classnames";
 
 import TodoItem from "./components/TodoItem";
 import styles from "./App.module.css";
@@ -12,6 +13,7 @@ export default function App() {
     { id: 2, text: "Learn GraphQL", isComplete: false },
   ]);
   const [inputText, setInputText] = useState("");
+  const [filter, setFilter] = useState("SHOW_ALL");
 
   const setText = (id) => (text) => {
     setTodoList((todoList) =>
@@ -32,7 +34,7 @@ export default function App() {
     ]);
   };
 
-  const handleChange = (event) => {
+  const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
 
@@ -42,30 +44,61 @@ export default function App() {
     setInputText("");
   };
 
+  const handleSelectChange = (event) => {
+    setFilter(event.target.value);
+  };
+
+  const filteredTodo = useMemo(
+    () =>
+      todoList.filter((todo) =>
+        filter === "SHOW_ALL"
+          ? true
+          : filter === "SHOW_ACTIVE"
+          ? !todo.isComplete
+          : todo.isComplete
+      ),
+    [todoList, filter]
+  );
+
   return (
     <Fragment>
-      <ul className={styles.list}>
-        {todoList.map(({ id, text, isComplete }) => (
-          <TodoItem
-            key={id}
-            text={text}
-            isComplete={isComplete}
-            setText={setText(id)}
-            setCheckbox={setCheckbox(id)}
-          />
-        ))}
-        <li className={styles.inputItem}>
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <input
-              className={styles.input}
-              type="text"
-              value={inputText}
-              placeholder="Add new todo"
-              onChange={handleChange}
+      <div className={styles.menuBar}>
+        <div className={classNames(styles.menu, styles.container)}>
+          <select
+            value={filter}
+            className={styles.select}
+            onChange={handleSelectChange}
+          >
+            <option value="SHOW_ALL">All</option>
+            <option value="SHOW_ACTIVE">Active</option>
+            <option value="SHOW_COMPLETED">Completed</option>
+          </select>
+        </div>
+      </div>
+      <div className={styles.container}>
+        <ul className={styles.list}>
+          {filteredTodo.map(({ id, text, isComplete }) => (
+            <TodoItem
+              key={id}
+              text={text}
+              isComplete={isComplete}
+              setText={setText(id)}
+              setCheckbox={setCheckbox(id)}
             />
-          </form>
-        </li>
-      </ul>
+          ))}
+          <li className={styles.inputItem}>
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <input
+                className={styles.input}
+                type="text"
+                value={inputText}
+                placeholder="What's todo?"
+                onChange={handleInputChange}
+              />
+            </form>
+          </li>
+        </ul>
+      </div>
     </Fragment>
   );
 }

@@ -2,7 +2,6 @@
   --snow-light: rgba(255, 255, 255, 0.85);
   --cream-lighter: #faf6f6;
   --cream-light: #f6ecec;
-  --cream-bold: #f6c9bb;
   --green-lighter: #ade6b4;
   --green-light: #73cd78;
   --green-bold: #09583e;
@@ -17,13 +16,64 @@
 
 :global body {
   background-color: var(--cream-light);
+  color: var(--green-bold);
   font-family: "Poppins", "Segoe UI", Roboto, Ubuntu, "Open Sans",
     "Helvetica Neue", sans-serif;
 }
 
 :global #root {
   height: 100%;
+}
+
+.container {
   padding: 1rem;
+}
+
+.menuBar {
+  background-color: var(--green-light);
+  color: var(--snow-light);
+}
+
+.menu {
+  font-size: 1.25rem;
+}
+
+.select {
+  appearance: none;
+  border-color: transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  outline: none;
+  width: 100%;
+}
+
+.select:hover {
+  background-color: var(--snow-light);
+  color: var(--green-light);
+}
+
+.select:focus {
+  background-color: var(--snow-light);
+  color: var(--green-light);
+  outline: 0;
+}
+
+.select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 var(--green-light);
+}
+
+.select:not([multiple]):not([size]) {
+  background-image: url("data:image/svg+xml, %3Csvg fill='%23eeeeee' height='30' viewBox='0 0 24 24' width='30' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z' /%3E%3Cpath d='M0-.75h24v24H0z' fill='none' /%3E%3C/svg%3E");
+}
+
+.select:not([multiple]):not([size]):hover {
+  background-image: url("data:image/svg+xml, %3Csvg fill='%2373cd78' height='30' viewBox='0 0 24 24' width='30' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z' /%3E%3Cpath d='M0-.75h24v24H0z' fill='none' /%3E%3C/svg%3E");
+}
+
+.select:not([multiple]):not([size]):focus {
+  background-image: url("data:image/svg+xml, %3Csvg fill='%2373cd78' height='30' viewBox='0 0 24 24' width='30' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z' /%3E%3Cpath d='M0-.75h24v24H0z' fill='none' /%3E%3C/svg%3E");
 }
 
 .list {
@@ -52,7 +102,7 @@
   border-radius: 3px;
   border: 1px solid transparent;
   font-size: 1.25rem;
-  outline: none;
+  padding: 0.25rem;
   width: 100%;
 }
 
@@ -61,11 +111,12 @@
   border-color: var(--green-light);
   box-shadow: 0 0 2px 0 var(--green-bold);
   cursor: auto;
+  outline: 0;
   text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
-  :global #root {
+  .container {
     margin: 0 auto;
     max-width: 768px;
   }
