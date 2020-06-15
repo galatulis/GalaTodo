@@ -1,8 +1,17 @@
-import React, { useState, Fragment, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import classNames from "classnames";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 import TodoItem from "./components/TodoItem";
 import styles from "./App.module.css";
+
+function reorder(list, startIndex, endIndex) {
+  const result = [...list];
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+}
 
 let lastId = 3;
 
@@ -48,6 +57,14 @@ export default function App() {
     setFilter(event.target.value);
   };
 
+  const handleDragEnd = (result) => {
+    if (result.destination) {
+      setTodoList(
+        reorder(todoList, result.source.index, result.destination.index)
+      );
+    }
+  };
+
   const filteredTodo = useMemo(
     () =>
       todoList.filter((todo) =>
@@ -61,7 +78,7 @@ export default function App() {
   );
 
   return (
-    <Fragment>
+    <DragDropContext onDragEnd={handleDragEnd}>
       <div className={styles.menuBar}>
         <div className={classNames(styles.menu, styles.container)}>
           <select
@@ -75,30 +92,41 @@ export default function App() {
           </select>
         </div>
       </div>
-      <div className={styles.container}>
-        <ul className={styles.list}>
-          {filteredTodo.map(({ id, text, isComplete }) => (
-            <TodoItem
-              key={id}
-              text={text}
-              isComplete={isComplete}
-              setText={setText(id)}
-              setCheckbox={setCheckbox(id)}
-            />
-          ))}
-          <li className={styles.inputItem}>
-            <form className={styles.form} onSubmit={handleSubmit}>
-              <input
-                className={styles.input}
-                type="text"
-                value={inputText}
-                placeholder="What's todo?"
-                onChange={handleInputChange}
-              />
-            </form>
-          </li>
-        </ul>
-      </div>
-    </Fragment>
+      <Droppable droppableId="droppable">
+        {(provided) => (
+          <div
+            {...provided.droppableProps}
+            ref={provided.innerRef}
+            className={styles.container}
+          >
+            <ul className={styles.list}>
+              {filteredTodo.map(({ id, text, isComplete }, index) => (
+                <TodoItem
+                  key={id}
+                  index={index}
+                  id={id}
+                  text={text}
+                  isComplete={isComplete}
+                  setText={setText(id)}
+                  setCheckbox={setCheckbox(id)}
+                />
+              ))}
+              {provided.placeholder}
+              <li className={styles.inputItem}>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                  <input
+                    className={styles.input}
+                    type="text"
+                    value={inputText}
+                    placeholder="What's todo?"
+                    onChange={handleInputChange}
+                  />
+                </form>
+              </li>
+            </ul>
+          </div>
+        )}
+      </Droppable>
+    </DragDropContext>
   );
 }

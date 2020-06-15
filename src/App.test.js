@@ -5,8 +5,8 @@ import App from "./App";
 
 describe("App", () => {
   it("renders title text", () => {
-    const { getByText } = render(<App />);
-    const linkElement = getByText(/Todo App/);
+    const { getByPlaceholderText } = render(<App />);
+    const linkElement = getByPlaceholderText(/what's todo/i);
     expect(linkElement).toBeInTheDocument();
   });
 });
