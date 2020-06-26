@@ -1,0 +1,22 @@
+.form {
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+.input {
+  background: transparent;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.input:focus {
+  background: var(--snow-light);
+  border-color: var(--green-light);
+  box-shadow: 0 0 2px 0 var(--green-bold);
+  cursor: auto;
+  outline: 0;
+  text-decoration: none;
+}

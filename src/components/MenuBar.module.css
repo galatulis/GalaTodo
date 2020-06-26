@@ -1,30 +1,3 @@
-:root {
-  --snow-light: rgba(255, 255, 255, 0.85);
-  --cream-lighter: #faf6f6;
-  --cream-light: #f6ecec;
-  --green-lighter: #ade6b4;
-  --green-light: #73cd78;
-  --green-bold: #09583e;
-  --grey-light: rgba(0, 0, 0, 0.35);
-  --grey-bold: rgba(0, 0, 0, 0.25);
-}
-
-:global html,
-:global body {
-  height: 100%;
-}
-
-:global body {
-  background-color: var(--cream-light);
-  color: var(--green-bold);
-  font-family: "Poppins", "Segoe UI", Roboto, Ubuntu, "Open Sans",
-    "Helvetica Neue", sans-serif;
-}
-
-:global #root {
-  height: 100%;
-}
-
 .container {
   padding: 1rem;
 }
@@ -74,45 +47,6 @@
 
 .select:not([multiple]):not([size]):focus {
   background-image: url("data:image/svg+xml, %3Csvg fill='%2373cd78' height='30' viewBox='0 0 24 24' width='30' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z' /%3E%3Cpath d='M0-.75h24v24H0z' fill='none' /%3E%3C/svg%3E");
-}
-
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.inputItem {
-  background: var(--cream-lighter);
-  border-radius: 0.25rem;
-  border: 1px solid rgba(0, 0, 0, 0.35);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-  display: flex;
-  margin-bottom: 0.5rem;
-  padding: 1rem;
-}
-
-.form {
-  padding: 0 0.5rem;
-  width: 100%;
-}
-
-.input {
-  background: transparent;
-  border-radius: 3px;
-  border: 1px solid transparent;
-  font-size: 1.25rem;
-  padding: 0.25rem;
-  width: 100%;
-}
-
-.input:focus {
-  background: var(--snow-light);
-  border-color: var(--green-light);
-  box-shadow: 0 0 2px 0 var(--green-bold);
-  cursor: auto;
-  outline: 0;
-  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {

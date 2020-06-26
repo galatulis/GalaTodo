@@ -1,0 +1,26 @@
+:root {
+  --snow-light: rgba(255, 255, 255, 0.85);
+  --cream-lighter: #faf6f6;
+  --cream-light: #f6ecec;
+  --green-lighter: #ade6b4;
+  --green-light: #73cd78;
+  --green-bold: #09583e;
+  --grey-light: rgba(0, 0, 0, 0.35);
+  --grey-bold: rgba(0, 0, 0, 0.25);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--cream-light);
+  color: var(--green-bold);
+  font-family: "Poppins", "Segoe UI", Roboto, Ubuntu, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+#root {
+  height: 100%;
+}

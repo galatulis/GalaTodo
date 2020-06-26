@@ -1,6 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
 
+import { render } from "./setupTests";
 import App from "./App";
 
 describe("App", () => {
