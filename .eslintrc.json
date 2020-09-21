@@ -1,8 +1,9 @@
 {
   "extends": [
     "react-app",
+    "plugin:import/errors",
+    "plugin:import/warnings",
     "plugin:prettier/recommended",
-    "prettier",
     "prettier/react"
   ],
   "overrides": [

@@ -34,6 +34,7 @@ export const todoSlice = createSlice({
           action.payload.endIndex,
           0,
           state.splice(action.payload.startIndex, 1)[0]
+          // eslint-disable-next-line no-sequences
         ),
         state
       ))([...state]),
