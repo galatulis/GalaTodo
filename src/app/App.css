@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+@import-normalize;
+
 :root {
   --snow-light: rgba(255, 255, 255, 0.85);
   --cream-lighter: #faf6f6;

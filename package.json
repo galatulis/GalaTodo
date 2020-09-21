@@ -4,26 +4,26 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
-    "@testing-library/jest-dom": "^5.11.0",
-    "@testing-library/react": "^10.4.3",
-    "@testing-library/user-event": "^12.0.11",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^12.1.5",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-scripts": "^3.4.1",
+    "react-redux": "^7.2.1",
+    "react-scripts": "^3.4.3",
     "redux": "^4.0.5",
-    "sanitize.css": "^11.0.1",
+    "sanitize.css": "^12.0.1",
     "typeface-poppins": "0.0.72"
   },
   "devDependencies": {
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-jest": "^24.0.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

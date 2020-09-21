@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import filterReducer from "./reducers/filterReducer";
-import todoReducer from "./reducers/todoReducer";
+import filterReducer from "../filters/filterReducer";
+import todoReducer from "../todos/todoReducer";
 
 export default configureStore({
   reducer: {

@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addTodo, toggleTodo, editTodo } from "../reducers/todoReducer";
-import { selectFilteredTodos } from "../reducers/filterReducer";
+import { addTodo, toggleTodo, editTodo } from "../todos/todoReducer";
+import { selectFilteredTodos } from "../filters/filterReducer";
 import TodoItem from "./TodoItem";
 import TodoInput from "./TodoInput";
 import styles from "./TodoList.module.css";

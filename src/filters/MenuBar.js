@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 
-import { selectFilter, setVisibilityFilter } from "../reducers/filterReducer";
+import { selectFilter, setVisibilityFilter } from "./filterReducer";
 import styles from "./MenuBar.module.css";
 
 export default function MenuBar() {

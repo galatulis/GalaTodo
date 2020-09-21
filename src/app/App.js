@@ -2,9 +2,9 @@ import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
-import { reorderTodo } from "./reducers/todoReducer";
-import MenuBar from "./components/MenuBar";
-import TodoList from "./components/TodoList";
+import { reorderTodo } from "../todos/todoReducer";
+import MenuBar from "../filters/MenuBar";
+import TodoList from "../todos/TodoList";
 import "./App.css";
 
 export default function App() {

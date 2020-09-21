@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { Draggable } from "react-beautiful-dnd";
 
-import TextArea from "./TextArea";
+import TextArea from "../shared/TextArea";
 import styles from "./TodoItem.module.css";
 
 export default function TodoItem({
