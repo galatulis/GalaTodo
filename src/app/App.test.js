@@ -1,5 +1,3 @@
-import React from "react";
-
 import { render } from "../setupTests";
 import App from "./App";
 
