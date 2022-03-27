@@ -2,9 +2,9 @@ name: Test
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   unit:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [16.x]
     steps:
       - name: Checkout project
         uses: actions/checkout@v2
