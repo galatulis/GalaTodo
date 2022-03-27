@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 
 import { Provider as StoreProvider } from "react-redux";
 import { render } from "@testing-library/react";
