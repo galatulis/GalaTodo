@@ -1,15 +1,33 @@
 {
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
   "extends": [
-    "react-app",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:prettier/recommended",
-    "prettier/react"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended",
+    "plugin:prettier/recommended"
   ],
-  "overrides": [
-    {
-      "files": ["*.test.js", "*.spec.js"],
-      "extends": ["plugin:jest/recommended", "plugin:jest/style"]
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    },
+    "react": {
+      "version": "detect"
     }
-  ]
+  }
 }

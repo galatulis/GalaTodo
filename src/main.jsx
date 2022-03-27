@@ -4,7 +4,6 @@ import { Provider as StoreProvider } from "react-redux";
 
 import App from "./app/App";
 import store from "./shared/store";
-import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,5 +13,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-serviceWorker.unregister();

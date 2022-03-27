@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Draggable } from "react-beautiful-dnd";
+import PropTypes from "prop-types";
 
 import TextArea from "../shared/TextArea";
 import styles from "./TodoItem.module.css";
@@ -68,3 +69,12 @@ export default function TodoItem({
     </Draggable>
   );
 }
+
+TodoItem.propTypes = {
+  text: PropTypes.string.isRequired,
+  setText: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  isComplete: PropTypes.bool.isRequired,
+  setCheckbox: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+};

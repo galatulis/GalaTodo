@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import styles from "./TodoInput.module.css";
 
@@ -27,3 +28,7 @@ export default function TodoInput({ setNewTodo }) {
     </form>
   );
 }
+
+TodoInput.propTypes = {
+  setNewTodo: PropTypes.func.isRequired,
+};

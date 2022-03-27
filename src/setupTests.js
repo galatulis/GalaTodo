@@ -9,6 +9,4 @@ function customRender(components) {
   return render(<StoreProvider store={store}>{components}</StoreProvider>);
 }
 
-export * from "@testing-library/react";
-
 export { customRender as render };

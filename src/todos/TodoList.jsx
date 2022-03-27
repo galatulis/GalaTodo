@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 import { addTodo, toggleTodo, editTodo } from "../todos/todoReducer";
 import { selectFilteredTodos } from "../filters/filterReducer";
@@ -59,3 +60,7 @@ export default function TodoList({ provided }) {
     </div>
   );
 }
+
+TodoList.propTypes = {
+  provided: PropTypes.object.isRequired,
+};
